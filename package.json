@@ -1,0 +1,29 @@
+{
+  "name": "test-plan-generator",
+  "version": "1.0.0",
+  "description": "generate a test plan in markdown for your project with a few parameters and template",
+  "main": "index.js",
+  "scripts": {
+    "new:sprint": "node index.js new:sprint",
+    "new:testPlan": "node index.js new:testPlan"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sajjadhossain/test-plan-generator.git"
+  },
+  "keywords": [
+    "test-plan",
+    "promptjs",
+    "node"
+  ],
+  "author": "sajjad hossain",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sajjadhossain/test-plan-generator/issues"
+  },
+  "homepage": "https://github.com/sajjadhossain/test-plan-generator#readme",
+  "dependencies": {
+    "markdown-it": "^8.4.2",
+    "prompts": "^1.1.1"
+  }
+}
