@@ -4,7 +4,7 @@
   "description": "generate a test plan in markdown for your project with a few parameters and template",
   "main": "index.js",
   "scripts": {
-    "new:sprint": "node index.js new:sprint",
+    "new:tester": "node index.js new:tester",
     "new:testPlan": "node index.js new:testPlan"
   },
   "repository": {

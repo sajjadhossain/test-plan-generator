@@ -1,4 +1,4 @@
-### General Compatibility
+#### General Compatibility
 
 | Operating System | OS Version | Webkit(s) | Supported Version(s) |
 | --- | --- | --- | --- |
@@ -11,7 +11,7 @@
 ||| Internet Explorer | Version 11.x.x + |
 ||| Edge | Version 12.x.x + |
 
-#### Currently only tested on
+##### Currently only tested on
 
 | Operating System | OS Version | Webkit(s) | Supported Version(s) |
 | --- | --- | --- | --- |
