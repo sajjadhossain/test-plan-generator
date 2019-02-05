@@ -12,12 +12,12 @@ So that I can upload to Confluence
 
 ## TODO
 - [ ] confirm action items with project participants
-- [ ] update script to request jira/test-rail data
-- [ ] add environments
-- [ ] add compatibility
-- [ ] add teams
-- [ ] add risks
-- [ ] add test rails, test cases
-- [ ] add scope, JIRA stories
+- [x] update script to request jira/test-rail data
+- [x] add environments
+- [x] add compatibility
+- [x] add teams
+- [x] add risks
+- [x] add test rails, test cases
+- [x] add scope, JIRA stories
 - [ ] documentation
   - [ ] README

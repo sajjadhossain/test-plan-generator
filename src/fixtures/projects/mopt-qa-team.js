@@ -1,5 +1,10 @@
 module.exports = [
   {
+    name: 'Sajjad Hossain',
+    email: 'Sajjad.Hossain@mbww.com',
+    slack: 'sajjadhossain'
+  },
+  {
     name: 'Monica Gil',
     email: 'Monica.Gil@mbww.com',
     slack: 'monicagil'

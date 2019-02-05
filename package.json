@@ -4,8 +4,8 @@
   "description": "generate a test plan in markdown for your project with a few parameters and template",
   "main": "index.js",
   "scripts": {
-    "new:tester": "node index.js new:tester",
-    "new:testPlan": "node index.js new:testPlan"
+    "new:testPlan": "node index.js new:testPlan",
+    "generate:testPlan": "node index.js generate:testPlan"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,9 @@
   },
   "homepage": "https://github.com/sajjadhossain/test-plan-generator#readme",
   "dependencies": {
+    "cli-progress": "^2.1.1",
     "markdown-it": "^8.4.2",
-    "prompts": "^1.1.1"
+    "prompts": "^2.0.1",
+    "request-promise": "^4.2.2"
   }
 }
