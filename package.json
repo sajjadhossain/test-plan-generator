@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "new:testPlan": "node index.js new:testPlan",
-    "generate:testPlan": "node index.js generate:testPlan"
+    "generate:testPlan": "node index.js generate:testPlan",
+    "confluence:writeTestPlans": "cd ./test-rails-support && npm run confluence:pushTestPlans",
+    "plans:clean": "rm -rf ./html/*.html && rm -rf ./html/sections/*.html"
   },
   "repository": {
     "type": "git",

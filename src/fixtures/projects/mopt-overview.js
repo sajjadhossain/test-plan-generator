@@ -29,8 +29,8 @@ module.exports = {
       jiraAgileBoard: 'https://projects.mbww.com/projects/MOPT/issues',
       confluencePage: 'https://wiki.mbww.com/display/PRODUCT/Optimization'
     },
-    inScope: 'sprint in $SPRINT_ID$ and type = Story and project = "Modeling and Optimization"',
-    knownDefects: 'sprint in $SPRINT_ID$ and type = Bug and project = "Modeling and Optimization"',
+    inScope: 'sprint = $SPRINT_ID$ and type = Story and project = "Modeling and Optimization"',
+    knownDefects: 'sprint = $SPRINT_ID$ and type = Bug and project = "Modeling and Optimization"',
     outOfScope: 'The logic inside of the legacy code of O3 will be treated as a black box, and no unit test or integration test will be considered for it. The test scenarios identified by the PO and Leads will be apart of this scope.',
     environments: [ 'Local (dev)', 'CI', 'QA', 'Stage', 'Production', 'Support' ]
   }

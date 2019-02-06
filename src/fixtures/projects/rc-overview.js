@@ -30,8 +30,8 @@ module.exports = {
       jiraAgileBoard: 'https://projects.mbww.com/projects/RC/issues',
       confluencePage: 'https://wiki.mbww.com/display/PRODUCT/Reach+Customization'
     },
-    inScope: 'sprint in $SPRINT_ID$ and type = Story and project = "Reach Customization"',
-    knownDefects: 'sprint in $SPRINT_ID$ and type = Bug and project = "Reach Customization"',
+    inScope: 'sprint = $SPRINT_ID$ and type = Story and project = "Reach Customization"',
+    knownDefects: 'sprint = $SPRINT_ID$ and type = Bug and project = "Reach Customization"',
     outOfScope: 'The logic inside of the legacy code of Reach Customization will be treated as a black box, and no unit test or integration test will be considered for it. The test scenarios identified by the PO and Leads will be apart of this scope.',
     environments: [ 'Local (dev)', 'CI', 'QA', 'Stage', 'Production' ]
   }

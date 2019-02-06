@@ -22,13 +22,14 @@ const progress = new _cliProgress.Bar(
 )
 // Start progress bar
 progress.start(100, 0)
-
 progress.update(25)
+
 getActiveSprints.then((sprints) => {
   sprints.forEach((sprint) => {
     progress.update(35)
-    let projectShortName = sprint.values[0].name.replace(/[0-9\-]{1,}/g, '')
-    let projectLowerCase = projectShortName.toLowerCase()
+
+    let openSprints = JSON.parse(sprint)
+    let projectShortName = openSprints.values[0].name.replace(/[0-9\-]{1,}/g, '')
 
     if (project.project === projectShortName) {
       planObject = {
@@ -39,16 +40,16 @@ getActiveSprints.then((sprints) => {
         access: access,
         project: project.project,
         project_name: project.project_name,
-        sprint_name: sprint.values[0].name,
-        sprint_number: sprint.values[0].name.replace(/[A-z\-]{1,}/g, ''),
-        sprint_ID: sprint.values[0].id,
+        sprint_name: openSprints.values[0].name,
+        sprint_number: openSprints.values[0].name.replace(/[A-z\-]{1,}/g, ''),
+        sprint_ID: openSprints.values[0].id,
         plan: {
           type: 'SPRINT',
           goal: 'changes made to the application in this sprint are certifiable',
-          kind: 'Sprint ' + sprint.values[0].name.replace(/[A-z\-]{1,}/g, '') + ' Regression',
-          name: project.project_name + ' Sprint ' + sprint.values[0].name.replace(/[A-z\-]{1,}/g, '') + ' Regression',
-          overview: '../fixtures/projects/' + projectLowerCase + '-overview.js',
-          qa_team: '../fixtures/projects/' + projectLowerCase + '-qa-team.js'
+          kind: 'Sprint ' + openSprints.values[0].name.replace(/[A-z\-]{1,}/g, '') + ' Regression',
+          name: project.project_name + ' Sprint ' + openSprints.values[0].name.replace(/[A-z\-]{1,}/g, '') + ' Regression',
+          overview: '../fixtures/projects/' + projectShortName.toLowerCase() + '-overview.js',
+          qa_team: '../fixtures/projects/' + projectShortName.toLowerCase() + '-qa-team.js'
         }
       }
 
@@ -60,7 +61,7 @@ getActiveSprints.then((sprints) => {
       fs.writeFile(projectFile, JSON.stringify(planObject), (error) => {
         if (error) throw error
       })
-      //
+
       generateOverviewSection(planObject, projectOverview)
       progress.update(45)
 
@@ -69,9 +70,13 @@ getActiveSprints.then((sprints) => {
 
       // Update and end stop progress
       setTimeout(() => {
+        progress.update(80)
+
         planContent =
           fs.readFileSync('./html/sections/' + planName + '-overview.html') +
           fs.readFileSync('./html/sections/' + planName + '-acceptance-criteria.html')
+
+        progress.update(90)
 
         fs.writeFile(plansDirectory + '/' + planName + '.html', planContent, (error) => {
           if (error) throw error
@@ -79,7 +84,7 @@ getActiveSprints.then((sprints) => {
 
         progress.update(100)
         progress.stop()
-      }, 10000)
+      }, 15000)
     }
   })
 })

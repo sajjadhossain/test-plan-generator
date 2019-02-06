@@ -77,6 +77,7 @@ const getAcceptanceCriteria = (planObject, projectOverview) => {
 
     for(var key in testCases) {
       if(key === planObject.project.toLowerCase()) {
+
         testCases[key].forEach((testCase) => {
           testCasesForPlan.push(
             '| [' + testCase.title + '](' + 'http://testrail.cadreon.com/testrail/index.php?/cases/view/' + testCase.id + ') |  |\n'
