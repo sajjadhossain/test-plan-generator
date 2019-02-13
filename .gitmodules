@@ -1,0 +1,3 @@
+[submodule "test-rails-support"]
+	path = test-rails-support
+	url = git@github.com:sajjadhossain/test-rails-support.git
