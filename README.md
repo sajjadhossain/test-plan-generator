@@ -34,10 +34,9 @@ So that I can upload to Confluence
 ## Steps
 
 1. In `test-plan-generator`
-
-  1. run `npm run new:testPlan` and submit the required information
-  2. run `npm run generate:testPlan`
-  3. run `npm run confluence:writeTestPlans` OR in `test-rails-support`, repository, run: `npm run confluence:pushTestPlans`
+    1. run `npm run new:testPlan` and submit the required information
+    2. run `npm run generate:testPlan`
+    3. run `npm run confluence:writeTestPlans` OR in `test-rails-support`, repository, run: `npm run confluence:pushTestPlans`
 
 ### Additionally:
 
