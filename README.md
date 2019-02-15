@@ -18,7 +18,7 @@ So that I can upload to Confluence
 
 * Currently, although we collect and store this data via a script, in v1.2 we still need a user module in project root. Create a `user.js` in the following schema:
 
-  ```
+  ```js
   module.exports = {
     name: ['First', 'Last'],
     jiraUserName: 'First.Last@mbww.com',
@@ -26,6 +26,12 @@ So that I can upload to Confluence
     testRailPassword: 'YourPasswordForTestRails'
   }
   ```
+* We also need a `access.js` in `test-rails-support`, in the following schema:
+
+  ```js
+  module.exports = ['marketplaceUser', 'marketplacePassword']
+  ```
+
 * Tester MUST be on VPN when using these tools
 * Sprint must be kicked off
 * Test cases must be created in a Sprint Milestone
@@ -33,10 +39,10 @@ So that I can upload to Confluence
 
 ## Steps
 
-1. In `test-plan-generator`
-    1. run `npm run new:testPlan` and submit the required information
-    2. run `npm run generate:testPlan`
-    3. run `npm run confluence:writeTestPlans` OR in `test-rails-support`, repository, run: `npm run confluence:pushTestPlans`
+1. From `test-plan-generator`, run `npm run project:init`
+2. Then, run `npm run new:testPlan` and submit the required information
+3. Then, run `npm run generate:testPlan`
+4. Then, run `npm run confluence:writeTestPlans` OR in `test-rails-support`, repository, run: `npm run confluence:pushTestPlans`
 
 ### Additionally:
 

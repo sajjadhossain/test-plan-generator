@@ -9,7 +9,7 @@ let access
 let plan
 // Test plan
 const testRailsRoot = './test-rails-support/'
-const axs = require('../../' + testRailsRoot + 'access.js')
+const axs = require(testRailsRoot.replace('./', '../../') + 'access.js')
 const htmlDirectory = 'html/'
 const plansDirectory = 'plans/'
 const accessPath = testRailsRoot + 'access.json'
