@@ -4,7 +4,7 @@
   "description": "generate a test plan in markdown for your project with a few parameters and template",
   "main": "index.js",
   "scripts": {
-    "project:init": "npm install && cd ./test-rails-supporr && npm install",
+    "project:init": "npm install && cd ./test-rails-support && npm install",
     "new:testPlan": "node index.js new:testPlan",
     "generate:testPlan": "node index.js generate:testPlan",
     "confluence:writeTestPlans": "cd ./test-rails-support && npm run confluence:pushTestPlans",
