@@ -68,7 +68,6 @@ getActiveSprints.then((sprints) => {
       generateAcceptanceCriteria(planObject, projectOverview)
       progress.update(60)
 
-      // Update and end stop progress
       setTimeout(() => {
         progress.update(80)
 
@@ -82,9 +81,10 @@ getActiveSprints.then((sprints) => {
           if (error) throw error
         })
 
+        // Update and end stop progress
         progress.update(100)
         progress.stop()
-      }, 15000)
+      }, 20000)
     }
   })
 })

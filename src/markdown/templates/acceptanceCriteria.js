@@ -76,9 +76,12 @@ const getAcceptanceCriteria = (planObject, projectOverview) => {
     testCases = body
 
     for(var key in testCases) {
-      if(key === planObject.project.toLowerCase()) {
-
-        testCases[key].forEach((testCase) => {
+      let projectShortNamesReference = {
+        34: 'mopt',
+        52: 'rc'
+      }
+      if(projectShortNamesReference[key] === planObject.project.toLowerCase()) {
+        JSON.parse(testCases[key]).forEach((testCase) => {
           testCasesForPlan.push(
             '| [' + testCase.title + '](' + 'http://testrail.cadreon.com/testrail/index.php?/cases/view/' + testCase.id + ') |  |\n'
           )
