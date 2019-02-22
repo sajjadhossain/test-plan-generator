@@ -12,50 +12,23 @@ So that I can upload to Confluence
 
 ## Installation
 
-* Clone repository and submodules: `git clone --recursive git@github.com:sajjadhossain/test-plan-generator.git` or if you've already cloned: `git submodule update --init --recursive`
+### Notes
+1. MUST be on VPN when using these tools
+2. Sprint must be kicked off, active
+3. Tester must ask test lead: @sajjadhossain, for key
 
-## Caveats
-
-* Currently, although we collect and store this data via a script, in v1.2 we still need a user module in project root. Create a `user.js` in the following schema:
-
-  ```js
-  module.exports = {
-    name: ['First', 'Last'],
-    jiraUserName: 'First.Last@mbww.com',
-    jiraPassword: 'YourPasswordForJIRA',
-    testRailPassword: 'YourPasswordForTestRails'
-  }
-  ```
-* We also need a `access.js` in `test-rails-support`, in the following schema:
-
-  ```js
-  module.exports = ['marketplaceUser', 'marketplacePassword']
-  ```
-
-* Tester MUST be on VPN when using these tools
-* Sprint must be kicked off
-* Test cases must be created in a Sprint Milestone
-* Due to slight flakiness in the way I wrote my asynchronous code, we may have to run `generate:testPlan` more than once to capture all test cases from test rails
-
-## Steps
-
-1. From `test-plan-generator`, run `npm run project:init`
-2. Then, run `npm run new:testPlan` and submit the required information
-3. Then, run `npm run generate:testPlan`
-4. Then, run `npm run confluence:writeTestPlans` OR in `test-rails-support`, repository, run: `npm run confluence:pushTestPlans`
+### Steps
+1. Clone repository and submodules: `git clone --recursive git@github.com:sajjadhossain/test-plan-generator.git` or if you've already cloned: `git submodule update --init --recursive`
+2. From `test-plan-generator`, run `npm run project:init`
+3. Then, run `npm run decrypt:key <key>`
+4. Then, run `npm run new:testPlan` and submit the required information
+5. Then, run `npm run generate:testPlan`
+6. Then, run `npm run confluence:writeTestPlans` OR in `test-rails-support`, repository, run: `npm run confluence:pushTestPlans`
 
 ### Additionally:
 
 * To clean the repository, in `test-plan-generator`, we can run `npm run plans:clean`
 
 ## TODO
-- [x] confirm action items with project participants
-- [x] update script to request jira/test-rail data
-- [x] add environments
-- [x] add compatibility
-- [x] add teams
-- [x] add risks
-- [x] add test rails, test cases
-- [x] add scope, JIRA stories
-- [ ] documentation
-  - [x] README
+- [x] Decrypt access.js with a key
+- [ ] Use dynamic user captured from script

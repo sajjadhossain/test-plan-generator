@@ -1,6 +1,4 @@
 # Project specific
-user.js
-user.json
 plans/*.json
 html/*.html
 html/**/*.html
