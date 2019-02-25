@@ -9,7 +9,8 @@
     "generate:testPlan": "node index.js generate:testPlan",
     "decrypt:key": "node index.js decrypt:key",
     "confluence:writeTestPlans": "cd ./test-rails-support && npm run confluence:pushTestPlans",
-    "plans:clean": "rm -rf ./html/*.html && rm -rf ./html/sections/*.html && rm -rf ./plans/*.json && rm -rf ./user.json && rm -rf ./access.json"
+    "plans:clean": "rm -rf ./html/*.html && rm -rf ./html/sections/*.html && rm -rf ./plans/*.json && rm -rf ./user.json && rm -rf ./access.json",
+    "start:cron": "node cron.js"
   },
   "repository": {
     "type": "git",
@@ -30,7 +31,9 @@
     "cli-progress": "^2.1.1",
     "crypto-js": "^3.1.9-1",
     "markdown-it": "^8.4.2",
+    "node-schedule": "^1.3.2",
     "prompts": "^2.0.1",
-    "request-promise": "^4.2.2"
+    "request-promise": "^4.2.2",
+    "shelljs": "^0.8.3"
   }
 }

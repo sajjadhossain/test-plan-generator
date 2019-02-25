@@ -15,7 +15,6 @@ else if (type === 'decrypt:key') {
   } else {
     decrypt(key)
   }
-}
-else {
+} else {
   console.error('Please provide a valid script, like: "new:testPlan" or "generate:testPlan"')
 }
