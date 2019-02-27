@@ -49,45 +49,31 @@ const getAcceptanceCriteria = (planObject, projectOverview) => {
   getMilestones.then((body) => {
     milestones = body
 
-    for(var key in milestones) {
-      if(key === planObject.project.toLowerCase()) {
-        milestones[key].forEach((milestone) => {
-          milestonesForPlan.push(
-            '| [' + milestone.name + '](' + milestone.url + ') |  |\n'
-          )
-        })
-      }
-    }
+    milestones.forEach((milestone) => {
+      milestonesForPlan.push(
+        '| [' + milestone.name + '](' + milestone.url + ') |  |\n'
+      )
+    })
   })
   getTestRuns.then((body) => {
     testRuns = body
 
-    for(var key in testRuns) {
-      if(key === planObject.project.toLowerCase()) {
-        testRuns[key].forEach((testRun) => {
-          testRunsForPlan.push(
-            '| [' + testRun.name + '](' + testRun.url + ') |  |\n'
-          )
-        })
-      }
-    }
+    testRuns.forEach((testRun) => {
+      testRunsForPlan.push(
+        '| [' + testRun.name + '](' + testRun.url + ') |  |\n'
+      )
+    })
   })
   getTestCases.then((body) => {
     testCases = body
 
-    for(var key in testCases) {
-      let projectShortNamesReference = {
-        34: 'mopt',
-        52: 'rc'
-      }
-      if(projectShortNamesReference[key] === planObject.project.toLowerCase()) {
-        JSON.parse(testCases[key]).forEach((testCase) => {
-          testCasesForPlan.push(
-            '| [' + testCase.title + '](' + 'http://testrail.cadreon.com/testrail/index.php?/cases/view/' + testCase.id + ') |  |\n'
-          )
-        })
-      }
-    }
+    testCases.forEach((testCasesForMilestone) => {
+      testCasesForMilestone.forEach((testCase) => {
+        testCasesForPlan.push(
+          '| [' + testCase.title + '](' + 'http://testrail.cadreon.com/testrail/index.php?/cases/view/' + testCase.id + ') |  |\n'
+        )
+      })
+    })
   })
 
   generateACSection.then((acceptanceCriteria) => {

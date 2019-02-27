@@ -22,13 +22,17 @@ So that I can upload to Confluence
 2. From `test-plan-generator`, run `npm run project:init`
 3. Then, run `npm run decrypt:key <key>`
 4. Then, run `npm run new:testPlan` and submit the required information
-5. Then, run `npm run generate:testPlan`
-6. Then, run `npm run confluence:writeTestPlans` OR in `test-rails-support`, repository, run: `npm run confluence:pushTestPlans`
+5. Then, run `npm run generate:planObject`
+6. Then, run `npm run testRails:createTestCases`
+6. Then, run `npm run generate:testPlan`
+7. Then, run `npm run confluence:writeTestPlans` OR in `test-rails-support`, repository, run: `npm run confluence:pushTestPlans`
 
 ### Additionally:
 
 * To clean the repository, in `test-plan-generator`, we can run `npm run plans:clean`
 
 ## TODO
-- [x] Decrypt access.js with a key
-- [ ] Use dynamic user captured from script
+- [x] Get ticket for sprint
+  - [ ] Create test cases for each ticket
+    - [ ] link to JIRA
+    - [ ] link test runs

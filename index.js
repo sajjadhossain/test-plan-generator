@@ -6,6 +6,9 @@ if (type === 'new:testPlan') {
 else if (type === 'generate:testPlan') {
   require('./src/markdown/makePlans')
 }
+else if (type === 'generate:planObject') {
+  require('./src/markdown/generatePlanObject')
+}
 else if (type === 'decrypt:key') {
   const decrypt = require('./src/decrypt')
   const key = process.argv[3]

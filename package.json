@@ -1,14 +1,16 @@
 {
   "name": "test-plan-generator",
-  "version": "1.0.0",
+  "version": "2.1.0",
   "description": "generate a test plan in markdown for your project with a few parameters and template",
   "main": "index.js",
   "scripts": {
     "project:init": "npm install && cd ./test-rails-support && npm install && cd ../",
     "new:testPlan": "node index.js new:testPlan",
+    "generate:planObject": "node index.js generate:planObject",
     "generate:testPlan": "node index.js generate:testPlan",
     "decrypt:key": "node index.js decrypt:key",
     "confluence:writeTestPlans": "cd ./test-rails-support && npm run confluence:pushTestPlans",
+    "testRails:createTestCases": "cd ./test-rails-support && npm run testRails:createTestCases",
     "plans:clean": "rm -rf ./html/*.html && rm -rf ./html/sections/*.html && rm -rf ./plans/*.json && rm -rf ./user.json && rm -rf ./access.json",
     "start:cron": "node cron.js"
   },
