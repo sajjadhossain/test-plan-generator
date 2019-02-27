@@ -1,6 +1,6 @@
 # test-plan-generator
 
-generate a test plan in markdown for your project with a few parameters and template.
+Generate a test plan and push it to Confluence.
 
 ## Story
 
@@ -30,9 +30,3 @@ So that I can upload to Confluence
 ### Additionally:
 
 * To clean the repository, in `test-plan-generator`, we can run `npm run plans:clean`
-
-## TODO
-- [x] Get ticket for sprint
-  - [x] Create test cases for each ticket
-    - [x] link to JIRA
-    - [x] link test runs
