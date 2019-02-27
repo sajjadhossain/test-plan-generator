@@ -33,6 +33,6 @@ So that I can upload to Confluence
 
 ## TODO
 - [x] Get ticket for sprint
-  - [ ] Create test cases for each ticket
-    - [ ] link to JIRA
-    - [ ] link test runs
+  - [x] Create test cases for each ticket
+    - [x] link to JIRA
+    - [x] link test runs
